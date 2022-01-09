@@ -62,7 +62,48 @@ CREATE TABLE IF NOT EXISTS cita (
     FOREIGN KEY (id_os) REFERENCES obra_social(id_os)
     );
     
+    INSERT INTO consultorio
+VALUES
+(NULL, "Libertador 123", 5400, 4202020, "lib_123@gmail.com"),
+(NULL, "Aberastain 321", 5425, 4202222, "aber_321@gmail.com"),
+(NULL, "Santa Fe 456", 5400, 4202020, "sfe_456@gmail.com");
     
+INSERT INTO especialidad
+VALUES 
+(NULL, "PEDIATRIA"),
+(NULL, "TRAUMATOLOGIA"),
+(NULL, "GINECOLOGIA");
+
+INSERT INTO medico
+VALUES
+(NULL, "Carlos","Macias", '1976/01/19', 8019, 1),
+(NULL, "Matias","Arce", '1980/11/10', 9091, 2),
+(NULL, "Carla","Vallejos", '1990/03/01', 11200, 3);
+
+INSERT INTO obra_social
+VALUES 
+(NULL, "OSDE", 30358526358, "Rawson 987"),
+(NULL, "SANCOR", 30700768601, "Cordoba 789"),
+(NULL, "OSECAC", 30405230202, "Rawson 987");
+
+INSERT INTO paciente
+VALUES
+(NULL, "Franco", "Gomez", "1990/04/14", "fragom@gmail.com", "Vidart 121" ,1),
+(NULL, "Elisa", "Carrera", "1999/06/10", "elicar@gmail.com", "Alem 242",2),
+(NULL, "Maria", "Becerra", "2000/06/15", "mabec@gmail.com", "Brasil 114",3);
+
+ALTER TABLE medico_obrasocial
+ADD id_mos INT NOT NULL PRIMARY KEY AUTO_INCREMENT;
+
+INSERT INTO medico_obrasocial
+VALUES
+(1, 2, NULL),
+(2, 3, NULL),
+(3, 1, NULL);
+
+INSERT INTO cita
+VALUES
+(1, "2022/01/05", 1, 2, 1, 2);
     
     
     
